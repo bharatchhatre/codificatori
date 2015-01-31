@@ -55,11 +55,11 @@
 	      <tr>
 	      <td colspan="2" style="padding-bottom:20px;"><span id="tb_caption">Login to your account</span> </td></tr>
 	      <tr>
-	      <td>Username</td><td><input type="text" size="20" name="ca_txt" id="ca_txt"/></td>
+	      <td>UserName</td><td><input type="text" size="20" name="UserName" id="UserName"/></td>
 	      </tr>
 	      
 	      <tr>
-	      <td>Password</td><td><input type="password" size="20" name="cpwd_txt" id="cpwd_txt"/></td>
+	      <td>Password</td><td><input type="password" size="20" name="Password" id="Password"/></td>
 	      </tr>
 	      
 	      <tr>
@@ -82,7 +82,7 @@
 	      </td>
 		  </tr>
 	      <tr>
-	      <td ><input id="login_btn" name="customer_fr" type="submit" value=""/></td>
+	      <td ><input id="login_btn" name="submit" type="submit" value=""/></td>
 	      <td>
 	      <span id="signup_link">Not registered yet?? <a style="color:blue;" href="signup.php"> Register Now</a></span>
 	      </td>

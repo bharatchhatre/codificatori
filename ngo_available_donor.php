@@ -162,15 +162,32 @@ echo date('l F j, g:i a')?> &nbsp;  <a id="login_link"  href="<?php echo $url; ?
 <tr>
 <td>
 
-Number Of Demand:<label for="Demand"></label><br><br>
-Blood Group:<label for="BloodGroup"></label><br><br>
-Pincode:<label for="Pincode"></label><br><br><br>
+Number Of Demand:<input type="text" name="noofdemand"><br><br>
+Blood Group:<input type="text" name="bloodgroup"><br><br>
+Pincode:<input type="text" name="pincode"><br><br><br>
 
 </td></tr>
 
 <tr><td><input type="submit" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="reset" value="Clear"></td></tr>
 </table>
+
+<?php 
+
+if(isset($_REQUEST['noofdemand']) & isset($_REQUEST['blooodgroup']) & isset($_REQUEST['pincode']))
+{
+	
+$con=mysql_connect("localhost","root","");
+mysql_select_db("thinkfoundation",$con);
+
+$usrname=mysql_query('SELECT * FROM donor');
+
+}
+
+	
+	
+	
+?>
 </div>
 </form>
 </head>

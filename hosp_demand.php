@@ -140,7 +140,7 @@ color:white;
 <body bgcolor="white">
 
 <div id='cssmenu' width="1000px">
-<form action="hop_demand.php" method="POST">
+<form action="hosp_demand.php" method="POST">
 <div style="width:850px; height:350px; margin:0 auto 0 auto;">
 <!--<img src="topimage.jpg" width="100%"  height="55%" />-->
 <marquee bgcolor="black" style="8" behavior="alternate"><font color="#600000" size="5"><H6 style="font-family:Lucida Calligraphy;">Welcome to the Think Foundation!!</font></marquee>
@@ -156,11 +156,10 @@ color:white;
 </nav>  
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>HOSPITAL DEMAND</b>
 <br><br><br><br>
- <table border=2 width="50%" align="center" height="60%" id="table1" name="table1" >
+ 
 <tr>
 Number of Donors Required:<input type="text" name="txtnum" size="2" maxlength="2"><br><br><br>
 Blood Groups:<select name="blood_grps">
-<option>	</option> 
 <option>A+</option>
 <option>B+</option>
 <option>AB+</option> 
@@ -173,6 +172,28 @@ Blood Groups:<select name="blood_grps">
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<?php
+
+if(isset($_REQUEST['txtnum']) & isset($_REQUEST['blood_grps']))
+{
+	$no=$_REQUEST['txtnum'];
+	$bloodgrp=$_REQUEST['blood_grps'];
+	echo $bloodgrp;
+	
+$con=mysql_connect("localhost","root","");
+mysql_select_db("thinkfoundation",$con) or die("DB Error");
+$sql=mysql_query("INSERT INTO hospitaldemand VALUES(101,$no,'$bloodgrp')");
+//$result=mysql_query($sql,$con) or die("Error");
+	
+}
+else 
+{echo "invalid entry";}
+
+
+?>
+
 
 </td>
 </tr>
